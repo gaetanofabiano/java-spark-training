@@ -10,6 +10,7 @@ This example are designed to run locally, but if you remove in any main class th
 
 Follow this link to find a simple docker container that build a cluster with 1 master node and 2 worker.
 
+
 [a link](https://github.com/gaetanofabiano/dockerSparkCluster)
 
 ## Install
@@ -21,4 +22,8 @@ mvc clean install
 # Apache Spark Version
 
 2.4.1
+
+# Credits
+
+She knows
 
