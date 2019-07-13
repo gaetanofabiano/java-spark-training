@@ -33,6 +33,7 @@ public class CountExample {
         Map<String, Long> wordCountByValue = wordRdd.countByValue();
 
         System.out.println("CountByValue:");
+        
 
         for (Map.Entry<String, Long> entry : wordCountByValue.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
