@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.fabiano.bigdata</groupId>
 	<artifactId>java-spark-training</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -28,6 +28,24 @@
 
 
 	</dependencies>
+
+	<developers>
+		<developer>
+			<id>gaetanofabiano</id>
+			<name>Gaetano Fabiano</name>
+			<email>fabiano.gaetano@gmail.com</email>
+			<url>https://www.linkedin.com/in/gaetanofabiano</url>
+			<organization>www.gaetanofabiano.it</organization>
+			<organizationUrl>http://www.gaetanofabiano.it</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+				<role>big-data-developer</role>
+			</roles>
+			<timezone>Europe/Rome</timezone>
+		
+		</developer>
+	</developers>
 	<build>
 		<plugins>
 			<plugin>
