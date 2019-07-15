@@ -1,4 +1,4 @@
-## A collection of (no great) example of java code to understand Apache Spark Data structures by Gaetano Fabiano
+## A collection of (no great) example of java code to understand Apache Spark Data structures
 
 
 Spark allows programmers to develop complex, multi-step data pipelines using directed acyclic graph (DAG) pattern. It  supports in-memory data sharing across DAGs, so that different jobs can work with the same data.
