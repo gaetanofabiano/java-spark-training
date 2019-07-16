@@ -21,7 +21,7 @@ public class CountExample {
     public static void main(String[] args) throws Exception {
         Logger.getLogger("org").setLevel(Level.INFO);
         
-        SparkConf conf = new SparkConf().setAppName("count").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("count");
        
         JavaSparkContext sc = new JavaSparkContext(conf);
 
@@ -38,6 +38,7 @@ public class CountExample {
         for (Map.Entry<String, Long> entry : wordCountByValue.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
+        Thread.sleep(60000);
         sc.close();
     }
 }
