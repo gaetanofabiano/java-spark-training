@@ -1,4 +1,4 @@
-package it.fabiano.bigdata.spark.es15;
+package it.fabiano.bigdata.spark.es15	;
 
 
 import org.apache.log4j.Level;
