@@ -30,7 +30,7 @@ public class WordCount {
        
 
         //Spark Context
-        SparkConf configuration = new SparkConf().setAppName("wordCounts").setMaster("local[*]");
+        SparkConf configuration = new SparkConf().setAppName("wordCounts").setMaster("local[2]");
         JavaSparkContext javaSparkContext = new JavaSparkContext(configuration);
 
         

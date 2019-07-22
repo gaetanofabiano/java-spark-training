@@ -22,7 +22,7 @@ public class StackOverFlowSurvey {
     public static void main(String[] args) throws Exception {
         Logger.getLogger("org").setLevel(Level.ERROR);
         //SparkConf conf = new SparkConf().setAppName("StackOverFlowSurvey").setMaster("local[1]");
-        SparkConf conf = new SparkConf().setAppName("StackOverFlowSurvey");
+        SparkConf conf = new SparkConf().setAppName("StackOverFlowSurvey").setMaster("local[2]");
 
         SparkContext sparkContext = new SparkContext(conf);
         JavaSparkContext javaSparkContext = new JavaSparkContext(sparkContext);
@@ -36,7 +36,7 @@ public class StackOverFlowSurvey {
 
         numberOfBytes.register(sparkContext, Option.apply("processed bytes"), false);
         //JavaRDD<String> responseRDD = javaSparkContext.textFile("in/2016-stack-overflow-survey-responses.csv");
-        JavaRDD<String> responseRDD = javaSparkContext.textFile(args[0]);
+        JavaRDD<String> responseRDD = javaSparkContext.textFile("in/2016-stack-overflow-survey-responses.csv");
         
         JavaRDD<String> responseFromCanada = responseRDD.filter(response -> {
             String[] splits = response.split(Utils.COMMA_DELIMITER, -1);
@@ -52,11 +52,14 @@ public class StackOverFlowSurvey {
 
         });
 
-        Thread.sleep(60000);
+      
+
         System.out.println("Count of responses from Canada: " + responseFromCanada.count());
         System.out.println("Total count of responses: " + total.value());
         System.out.println("Count of responses missing salary middle point: " + missingSalaryMidPoint.value());
         System.out.println("Count of processed bytes: " + numberOfBytes.value());
-        javaSparkContext.close();
+        //javaSparkContext.close();
+        
+        
     }
 }

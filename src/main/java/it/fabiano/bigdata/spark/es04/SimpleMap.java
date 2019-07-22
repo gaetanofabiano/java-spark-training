@@ -33,11 +33,23 @@ public class SimpleMap {
         inputNumbers.add(5);    
         inputNumbers.add(6);    
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         JavaRDD<Integer> integerRdd = sc.parallelize(inputNumbers);
         
         JavaRDD<Integer> mapped = integerRdd.map(i ->(i*i));
         
-        integerRdd.foreach((str) -> System.out.println(str));
+        mapped.foreach((str) -> System.out.println(str));
         
        
         //mapped.foreach((str) -> System.out.println(str));

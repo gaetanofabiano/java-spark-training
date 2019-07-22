@@ -6,6 +6,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 
+import scala.Function2;
+
 /**
 * Java-Spark-Training-Course
 *
@@ -34,10 +36,18 @@ public class FunctionExamples {
         });
         
         
-        //filter Mode 2
-        //Named Class
-        lines.filter(new CustomFilter());
+        lines.filter(new Function<String,Boolean>(){
+
+			@Override
+			public Boolean call(String v1) throws Exception {
+				// TODO Auto-generated method stub
+				return null;
+			}
+        	
+        });
         
+        //filter Mode 2
+      
         
         //filter Mode 3
         //Lambda Function
@@ -63,13 +73,28 @@ public class FunctionExamples {
     
     
     @SuppressWarnings("serial")
-	public static class CustomFilter implements Function<String,Boolean>{
+	public static class CustomFilter implements Function<Persona,Boolean>{
+
+		
 
 		@Override
-		public Boolean call(String v1) throws Exception {
+		public Boolean call(Persona v1) throws Exception {
 			// TODO Auto-generated method stub
-			return v1.startsWith("F");
+			return v1.getCognome()!=null && v1.getNome()!=null && v1.getEta()!=0;
 		}
+    	
+    }
+    
+    @SuppressWarnings("serial")
+    public static class CustomFilter2 implements Function2<String,String,Boolean>{
+
+		@Override
+		public Boolean apply(String v1, String v2) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		
     	
     }
 }

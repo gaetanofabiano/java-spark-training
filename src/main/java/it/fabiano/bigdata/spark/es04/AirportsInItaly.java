@@ -33,24 +33,30 @@ public class AirportsInItaly {
     	 */
     	SparkConf conf = new SparkConf().setAppName("airports");
     	if(args.length==0) {
-    		conf.setMaster("local[2]");
+    		conf.setMaster("local[500]");
     	}
     	
         
 
         JavaSparkContext sc = new JavaSparkContext(conf);
+        
+        
+        
+        
 
-        JavaRDD<String> airports = sc.textFile("in/airports.text");
+        JavaRDD<String> airports = sc.textFile("in/airports2.text");
 
-        JavaRDD<String> airportsInUSA = airports.filter(line -> line.split(Utils.COMMA_DELIMITER)[3].equals("\"Italy\""));
+        JavaRDD<String> airportsInItaly = airports.filter(line -> line.split(Utils.COMMA_DELIMITER)[3].equals("\"Italy\""));
 
         
         //Map Transformation here
-        JavaRDD<String> airportsNameAndCityNames = airportsInUSA.map(line -> {
+        JavaRDD<String> airportsNameAndCityNames = airportsInItaly.map(line -> {
                     String[] splits = line.split(Utils.COMMA_DELIMITER);
                     return StringUtils.join(new String[]{splits[1], splits[2]}, ",");
                 }
         );
+        
+        System.out.println("The size is:"+airportsNameAndCityNames.count());
         airportsNameAndCityNames.saveAsTextFile("out/airports_in_italy.text");
         
         sc.close();

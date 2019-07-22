@@ -24,6 +24,8 @@ public class CreateRDDFromInputFile {
 
 	        JavaRDD<String> inputFileRDD = javaSparkContext.textFile("in/2016-stack-overflow-survey-responses.csv");
 	        
+	        
+	     
 	        System.out.println("the RDD size is:"+ inputFileRDD.count());
 
 	        javaSparkContext.close();

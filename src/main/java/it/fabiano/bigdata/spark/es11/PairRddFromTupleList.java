@@ -22,12 +22,12 @@ public class PairRddFromTupleList {
 
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        List<Tuple2<String, Integer>> tuple = Arrays.asList(new Tuple2<>("Gaetano", 23),
+        List<Tuple2<String, Integer>> tuples = Arrays.asList(new Tuple2<>("Gaetano", 23),
                                                             new Tuple2<>("Francesca", 29),
                                                             new Tuple2<>("Maria", 29),
                                                             new Tuple2<>("Jacopo",8));
 
-        JavaPairRDD<String, Integer> pairRDD = sc.parallelizePairs(tuple);
+        JavaPairRDD<String, Integer> pairRDD = sc.parallelizePairs(tuples);
 
         pairRDD.coalesce(1).saveAsTextFile("out/pair_rdd_from_tuple_list");
         

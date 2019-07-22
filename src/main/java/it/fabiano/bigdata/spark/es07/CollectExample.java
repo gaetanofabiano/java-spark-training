@@ -24,6 +24,7 @@ public class CollectExample {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         List<String> inputWords = Arrays.asList("spark", "hadoop", "spark", "hive", "pig", "cassandra", "hadoop");
+        
         JavaRDD<String> wordRdd = sc.parallelize(inputWords);
 
         List<String> words = wordRdd.collect();

@@ -25,7 +25,7 @@ public class ReduceExample {
         List<Integer> inputIntegers = Arrays.asList(1, 2, 3, 4, 5);
         JavaRDD<Integer> integerRdd = sc.parallelize(inputIntegers);
 
-        Integer product = integerRdd.reduce((x, y) -> x * y);
+        Integer product = integerRdd.reduce((x, y) -> x + y);
 
         System.out.println("product is :" + product);
         
