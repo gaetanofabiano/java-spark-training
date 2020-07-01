@@ -3,8 +3,9 @@ package it.fabiano.bigdata.spark.es10;
 * Java-Spark-Training-Course
 *
 * @author  Gaetano Fabiano
-* @version 1.0.0
+* @version 1.1.0
 * @since   2019-07-19 
+* @updated 2020-07-01 
 */
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -37,3 +38,4 @@ public class PersistExample {
         sc.close();
     }
 }
+

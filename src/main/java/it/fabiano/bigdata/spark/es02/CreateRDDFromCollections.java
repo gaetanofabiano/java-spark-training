@@ -1,7 +1,6 @@
 package it.fabiano.bigdata.spark.es02;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -10,17 +9,18 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 /**
- * Java-Spark-Training-Course
- *
- * @author  Gaetano Fabiano
- * @version 1.0.0
- * @since   2019-07-19 
- */
+* Java-Spark-Training-Course
+*
+* @author  Gaetano Fabiano
+* @version 1.1.0
+* @since   2019-07-19 
+* @updated 2020-07-01 
+*/
 public class CreateRDDFromCollections {
 	public static void main(String[] args) {
 
 		Logger.getLogger("org").setLevel(Level.ERROR);
-		SparkConf conf = new SparkConf().setAppName("RDD-creator").setMaster("local[1]");
+		SparkConf conf = new SparkConf().setAppName("RDD-creator").setMaster("local[2]");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 

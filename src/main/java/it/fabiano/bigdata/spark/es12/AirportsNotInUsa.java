@@ -30,6 +30,15 @@ Sample output:
 ("Wewak Intl", "Papua New Guinea")
 ...
 */
+
+/**
+* Java-Spark-Training-Course
+*
+* @author  Gaetano Fabiano
+* @version 1.1.0
+* @since   2019-07-19 
+* @updated 2020-07-01 
+*/ 
 public class AirportsNotInUsa {
 
 	// ./spark-submit --class it.fabiano.bigdata.spark.es12.AirportsNotInUsa /tmp/data/java-spark-training-1.0.0.jar /tmp/data/airports.text /tmp/data/output.txt --master spark://master:7077

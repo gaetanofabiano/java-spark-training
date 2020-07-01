@@ -13,19 +13,21 @@ import java.util.Map;
 * Java-Spark-Training-Course
 *
 * @author  Gaetano Fabiano
-* @version 1.0.0
+* @version 1.1.0
 * @since   2019-07-19 
+* @updated 2020-07-01 
 */
 public class CountExample {
 
     public static void main(String[] args) throws Exception {
         Logger.getLogger("org").setLevel(Level.INFO);
         
-        SparkConf conf = new SparkConf().setAppName("count").setMaster("local[4]");
+        SparkConf conf = new SparkConf().setAppName("count");
        
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         List<String> inputWords = Arrays.asList("spark", "hadoop", "spark", "hive", "pig", "cassandra", "hadoop");
+        
         JavaRDD<String> wordRdd = sc.parallelize(inputWords);
 
         System.out.println("Count: " + wordRdd.count());
@@ -39,7 +41,6 @@ public class CountExample {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
        
-        Thread.sleep(90000);
         sc.close();
     }
 }
