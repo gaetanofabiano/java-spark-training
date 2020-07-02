@@ -21,7 +21,7 @@ mvc clean install
 
 # Apache Spark Version
 
-3.0.0-preview (updated april 2020)
+3.0.0-preview (updated july 2020)
 
 # FOR WINDOWS USERS ONLY
 If you run this code on windows you could have this "harmless" Error
